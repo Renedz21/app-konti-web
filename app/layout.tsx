@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 
 import Footer from "@/components/shared/footer";
+import seoConfig from "@/seo.config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -12,24 +13,8 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Konti - Gestiona tus Boletas de Forma Segura",
-  description:
-    "Konti te ayuda a guardar y gestionar tus boletas digitales. Captura con cámara o ingresa manualmente. Descarga ahora en Google Play.",
-  icons: {
-    icon: [
-      {
-        url: "/icon.svg",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon.svg",
-        media: "(prefers-color-scheme: dark)",
-      },
-    ],
-    apple: "/icon.svg",
-  },
-};
+const { ...metadata } = seoConfig;
+export { metadata };
 
 export default function RootLayout({
   children,
