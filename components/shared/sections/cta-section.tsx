@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CtaSection() {
   return (
@@ -11,7 +12,12 @@ export default function CtaSection() {
           size="lg"
           className="bg-foreground hover:bg-foreground/90 text-background px-12 py-7 text-base font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
         >
-          Probar Konti
+          <Link
+            href="https://play.google.com/store/apps/details?id=com.edzon2121.KontiApp"
+            target="_blank"
+          >
+            Probar Konti
+          </Link>
         </Button>
       </div>
     </section>

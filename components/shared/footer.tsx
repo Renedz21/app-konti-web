@@ -18,38 +18,6 @@ export default function Footer() {
               deducciones tributarias en Perú.
             </p>
           </div>
-
-          {/* Links */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Producto</h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#features"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Funciones
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#ai"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Konti AI
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#pricing"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Planes
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contacto</h4>
@@ -60,14 +28,6 @@ export default function Footer() {
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   soporte.konti@gmail.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Centro de ayuda
                 </a>
               </li>
               <li>
