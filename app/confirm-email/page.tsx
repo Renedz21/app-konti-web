@@ -15,14 +15,11 @@ function ConfirmEmailContent() {
   useEffect(() => {
     const deleteAccount = async () => {
       try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/delete-account`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ token }),
-          }
-        );
+        const res = await fetch("/api/delete-account", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token }),
+        });
 
         if (!res.ok) {
           setMessage("No se pudo eliminar la cuenta");
