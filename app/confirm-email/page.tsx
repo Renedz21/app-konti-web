@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -9,8 +9,8 @@ export default function ConfirmEmailPage() {
   const [message, setMessage] = useState("Procesando...");
   const [isLoading, setIsLoading] = useState(true);
   const [isSuccess, setIsSuccess] = useState(false);
-  const params = useParams();
-  const token = params.token as string;
+  const params = useSearchParams();
+  const token = params.get("token");
 
   useEffect(() => {
     const deleteAccount = async () => {
