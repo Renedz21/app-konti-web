@@ -11,23 +11,30 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { useState } from "react";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
 
 export default function DeleteAccountModal() {
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleDeleteAccount = async () => {
     if (!email) {
+      toast.error("Por favor, ingresa tu correo electrónico");
       return;
     }
+    setIsLoading(true);
     try {
       const response = await fetch("/api/send", {
         method: "POST",
         body: JSON.stringify({ email }),
       });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
+      await response.json();
+      toast.success("Se ha enviado un correo de eliminación a tu cuenta");
+    } catch {
+      toast.error("Error al enviar el correo de eliminación");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -66,9 +73,13 @@ export default function DeleteAccountModal() {
           <Button
             variant="destructive"
             onClick={handleDeleteAccount}
-            disabled={!email}
+            disabled={!email || isLoading}
           >
-            Eliminar cuenta
+            {isLoading ? (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            ) : (
+              "Eliminar cuenta"
+            )}
           </Button>
         </DialogFooter>
       </DialogContent>
