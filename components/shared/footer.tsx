@@ -1,6 +1,7 @@
 import { Copyright } from "lucide-react";
 import KontiLogo from "../../public/konti_logo.png";
 import GitHubIcon from "../icons/github-icon";
+import DeleteAccountModal from "./delete-account-modal";
 
 export default function Footer() {
   return (
@@ -37,6 +38,15 @@ export default function Footer() {
                 >
                   Términos y condiciones
                 </a>
+              </li>
+            </ul>
+          </div>
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Soporte</h4>
+            <ul className="space-y-3">
+              <li>
+                <DeleteAccountModal />
               </li>
             </ul>
           </div>

@@ -22,10 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body className={cn(inter.className, "antialiased scroll-smooth")}>
         {children}
-        <Footer />
       </body>
     </html>
   );
