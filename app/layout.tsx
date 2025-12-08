@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-import Footer from "@/components/shared/footer";
 import seoConfig from "@/seo.config";
+import ToastProvider from "@/components/providers/toast-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={cn(inter.className, "antialiased scroll-smooth")}>
+        <ToastProvider />
         {children}
       </body>
     </html>
